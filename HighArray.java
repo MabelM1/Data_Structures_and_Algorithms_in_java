@@ -1,3 +1,15 @@
+//Chapter 2, Exercise 1: To the HighArray class in the highArray.java
+//program (Listing 2.3), add a method called getMax() that returns the
+//value of the highest key in the array, or -1 if the array is empty.
+//You can assume all the keys are positive numbers.
+
+//Chapter 2, Exercise 2: Modify the method getMax() so that the item with
+//the highest key is not only returned by the method, but also removed
+//from the array. Call the method removeMax().
+
+//Chapter 2, Exercise 3: The removeMax() method suggests a way to sort
+//the contents of the array by key value. Implement a sorting scheme that
+//does not require modifying the HighArray class, but only the code in main().
 
 public class HighArray {
   private long[] a;
