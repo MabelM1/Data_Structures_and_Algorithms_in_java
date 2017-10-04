@@ -1,4 +1,3 @@
-
 public class HighArrayApp {
 
 	public static void main(String[] args) {
@@ -9,24 +8,28 @@ public class HighArrayApp {
       HighArray inverseArray = new HighArray(maxSize);
       
       arr.insert(77);
-      arr.insert(99);
-      arr.insert(44);
-      arr.insert(55);
-      arr.insert(22);
-      arr.insert(88);
-      arr.insert(11);
-      arr.insert(00);
-      arr.insert(66);
+      arr.insert(89);
+      arr.insert(195);
+      arr.insert(1);
       arr.insert(33);
+      arr.insert(77);
+      arr.insert(77);
+      arr.insert(77);
+      arr.insert(89);
+      arr.insert(195);
+      arr.insert(1);
+      arr.insert(33);
+  
       
+      arr.display();
+      arr.noDups();
       arr.display();
       arr.removeMax();
       
+      
       while (!(arr.getMax() == -1)) {
-    	int index = 0;
         inverseArray.insert(arr.getMax());
         arr.removeMax();
-        index++;
       }
       
       inverseArray.display();
@@ -38,11 +41,5 @@ public class HighArrayApp {
       } else {
     	System.out.println("Can't find " + searchKey);
       }
-      
-      arr.delete(00);
-      arr.delete(55);
-      arr.display();
- 
-	}
-
+    }
 }
