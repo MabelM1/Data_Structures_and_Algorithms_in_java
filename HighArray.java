@@ -11,6 +11,11 @@
 //the contents of the array by key value. Implement a sorting scheme that
 //does not require modifying the HighArray class, but only the code in main().
 
+//Chapter 2, Exercise 6: Write a noDups() method. This method should remove
+//all duplicates from the array. That is, if three items with the key 17 appear
+//in the array, noDups() should remove two of them. Don't worry about maintaining
+//the order of the items.
+
 public class HighArray {
   private long[] a;
   private int nElems;
@@ -62,7 +67,7 @@ public class HighArray {
   
   public void display() {
     for (int j=0; j<nElems; j++) {
-      System.out.print(a[j] + " ");  
+      System.out.print( a[j] + " ");  
     }
     System.out.println("");
   }
@@ -89,5 +94,20 @@ public class HighArray {
    	  delete(getMax());   	  
     }
   }
-
+  
+  public void noDups() {
+	int count = nElems;
+	
+    for (int i=0; i<nElems; i++) {
+      for (int j=i+1; j<nElems; j++) {
+    	if (a[i] == a[j] && !(a[i] == -1000)) {
+    	  a[j] = -1000;	 
+    	}
+      }       
+    }
+     
+    for (int i=0; i < count; i++) {
+      delete(-1000);
+    }  
+  }
 } 
