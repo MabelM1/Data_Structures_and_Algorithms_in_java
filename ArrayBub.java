@@ -9,6 +9,15 @@
 //array. (Recall that in a group of numbers half are larger than the median and
 //half are smaller.)
 
+//Another simple sort is the odd-even sort. The idea is to repeatedly make two
+//passes through the array. On the first pass you look at all the pairs of items,
+//a[j] and a[j+1], where j is odd (j = 1, 3, 5, …). If their key values are out of
+//order, you swap them. On the second pass you do the same for all the even
+//values (j = 2, 4, 6, …). You do these two passes repeatedly until the array is
+//sorted. Replace the bubbleSort() method in bubbleSort.java (Listing 3.1) with
+//an oddEvenSort() method. Make sure it works for varying amounts of data.
+//You’ll need to figure out how many times to do the two passes. 
+
 public class ArrayBub {
 	private long[] a;
 	private int nElems;
@@ -29,7 +38,8 @@ public class ArrayBub {
 		}
 		System.out.println("");
 	}
-  	public void bubbleSort() {
+	
+	public void bubbleSort() {
 		int out, in;
 		for (out=nElems - 1; out > 1; out--) {
 			for (int outleft = 0; outleft < out; outleft++) {
@@ -54,8 +64,8 @@ public class ArrayBub {
 		a[one] = a[two];
 		a[two] = temp;
 	}
-  
-  	public long median() {
+	
+	public long median() {
 		int index=0;		
 		bubbleSort();		
 		if (nElems % 2 == 0) {		 
@@ -71,4 +81,26 @@ public class ArrayBub {
 		  return a[index];
 		}
 	}
+	
+	public void oddEvenSort() {
+				
+		for (int i=0; i < (nElems/2); i++) {
+			
+			for (int j=1; j < nElems - 1; j += 2) {
+				
+				if (a[j] >  a[j+1]) {
+					swap(j, j+1);
+				}
+			}
+			
+			for (int k=0; k < nElems - 1; k += 2) { 
+				
+				if (a[k] >  a[k+1]) {
+					swap(k, k+1);
+				}
+			}
+			
+		}
+	}
+		
 }
