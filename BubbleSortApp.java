@@ -18,7 +18,8 @@ public class BubbleSortApp {
 		arr.insert(11);
 		
 		arr.display();	
-		arr.bubbleSort();	
+		arr.bubbleSort();
+		//arr.oddEvenSort();	
 		arr.display();
 		
 		System.out.print("The median is " + arr.median());
